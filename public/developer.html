@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Guide - Sportswear Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <style>
+    .hero {
+      background-image: url('../images/hero-bg.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      color: white;
+      text-align: center;
+    }
+    .section-title {
+      color: #e63946;
+    }
+    pre code {
+      background: #f8f9fa;
+      padding: 1em;
+      display: block;
+      white-space: pre-wrap;
+      border-left: 4px solid #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="mb-4">Developer Wiki: Feature Implementation Guide</h1>
+
+    <section class="mb-5">
+      <h2 class="section-title">🎨 UI Styling & Interaction</h2>
+      <p>We applied a parallax scrolling effect to the hero section using CSS:</p>
+      <pre><code>.hero {
+  background-image: url('../images/hero-bg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}</code></pre>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">🔄 Dynamic JSON Data</h2>
+      <p>Products are fetched dynamically in <code>categories.html</code> using <code>fetch('/api/products')</code> and rendered with template literals.</p>
+      <p>You can also use external APIs or a local JSON file.</p>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">🛍 Product Detail Page & Add to Cart</h2>
+      <p><code>product.html</code> loads product details dynamically using the query string (e.g. <code>product.html?id=5</code>) and fetches from <code>/api/products/:id</code>. It displays the product with an <code>Add to Cart</code> button that stores the item in <code>localStorage</code>.</p>
+      <pre><code>function addToCart(product) {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existing = cart.find(item => item.id === product.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${product.name} added to cart!`);
+}</code></pre>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">🛒 Cart Page Fix (cart.html)</h2>
+      <p>To fix the error <code>item.price.toFixed is not a function</code>, we ensured price values are converted to numbers before formatting:</p>
+      <pre><code>const rows = cart.map(item => {
+  const price = parseFloat(item.price);
+  const itemTotal = price * item.quantity;
+  total += itemTotal;
+  return `
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src="${item.image_url}" width="50" onerror="this.onerror=null;this.src='/images/placeholder.png';"&gt;&lt;/td&gt;
+      &lt;td&gt;${item.name}&lt;/td&gt;
+      &lt;td&gt;$${price.toFixed(2)}&lt;/td&gt;
+      &lt;td&gt;${item.quantity}&lt;/td&gt;
+      &lt;td&gt;$${itemTotal.toFixed(2)}&lt;/td&gt;
+      &lt;td&gt;&lt;button class="btn btn-sm btn-danger" onclick="removeFromCart(${item.id})"&gt;Remove&lt;/button&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  `;
+}).join('');</code></pre>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">🔐 Secure User Authentication</h2>
+      <p>User passwords are hashed using <code>bcryptjs</code> before storing in MySQL. Sample registration route:</p>
+      <pre><code>const bcrypt = require('bcryptjs');
+const hashedPassword = await bcrypt.hash(password, 10);
+await pool.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, hashedPassword]);</code></pre>
+      <p>During login, we compare the hash using <code>bcrypt.compare()</code>.</p>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">🧠 Routing and Error Handling</h2>
+      <p>We added a dynamic route and error middleware to <code>server.js</code>:</p>
+      <pre><code>app.get('/api/products/:category', async (req, res) => { ... });
+app.use((req, res) => res.status(404).sendFile(...));</code></pre>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">💾 Alternate Storage Methods</h2>
+      <p>In addition to MySQL, we demonstrate reading products from a JSON file:</p>
+      <pre><code>fs.readFile('./data/products.json', 'utf-8', (err, data) => res.json(JSON.parse(data)) );</code></pre>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">🛠️ Key Fixes & Enhancements</h2>
+      <ul>
+        <li>Used <code>onerror</code> to load <code>placeholder.png</code> when images are missing.</li>
+        <li>Updated <code>SHOP NOW</code> buttons to use <code>product.html?id=...</code>.</li>
+        <li>Resolved duplicate <code>&lt;script&gt;</code> blocks in <code>product.html</code>.</li>
+        <li>Ensured clean database inserts by using <code>DELETE FROM products</code> before insertion.</li>
+        <li>Validated image paths and used browser debugging to fix broken references.</li>
+      </ul>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">📦 API Endpoints</h2>
+      <ul>
+        <li><code>GET /api/products</code> – Fetch all products</li>
+        <li><code>GET /api/products/:id</code> – Fetch one product by ID</li>
+        <li><code>POST /api/contact</code> – Handle contact form submission</li>
+      </ul>
+    </section>
+
+    <footer class="text-muted text-center mt-5">
+      <p>&copy; 2025 Sportswear Hub - Developer Wiki</p>
+    </footer>
+  </div>
+</body>
+</html>

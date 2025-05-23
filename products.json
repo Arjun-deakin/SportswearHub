@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Cricket Jersey",
+    "price": 49.99,
+    "category": "cricket",
+    "image_url": "/images/cricket.jpg"
+  },
+  {
+    "name": "Cricket Bat",
+    "price": 89.99,
+    "category": "cricket",
+    "image_url": "/images/cricket-bat.jpg"
+  },
+  {
+    "name": "Rugby Jersey",
+    "price": 54.99,
+    "category": "rugby",
+    "image_url": "/images/rugby.jpg"
+  },
+  {
+    "name": "Rugby Shorts",
+    "price": 39.99,
+    "category": "rugby",
+    "image_url": "/images/rugby-shorts.jpg"
+  },
+  {
+    "name": "Swim Goggles",
+    "price": 19.99,
+    "category": "swimming",
+    "image_url": "/images/swimming.jpg"
+  },
+  {
+    "name": "Swim Cap",
+    "price": 14.99,
+    "category": "swimming",
+    "image_url": "/images/swim-cap.jpg"
+  },
+  {
+    "name": "Badminton Racket",
+    "price": 59.99,
+    "category": "badminton",
+    "image_url": "/images/badminton.jpg"
+  },
+  {
+    "name": "Shuttlecock Pack",
+    "price": 9.99,
+    "category": "badminton",
+    "image_url": "/images/shuttlecock.jpg"
+  },
+  {
+    "name": "Tennis Racket",
+    "price": 69.99,
+    "category": "tennis",
+    "image_url": "/images/tennis.jpg"
+  },
+  {
+    "name": "Tennis Balls (6-pack)",
+    "price": 12.99,
+    "category": "tennis",
+    "image_url": "/images/tennis-balls.jpg"
+  },
+  {
+    "name": "Trekking Boots",
+    "price": 99.99,
+    "category": "trekking",
+    "image_url": "/images/trekking.jpg"
+  },
+  {
+    "name": "Waterproof Jacket",
+    "price": 79.99,
+    "category": "trekking",
+    "image_url": "/images/jacket.jpg"
+  },
+  {
+    "name": "Yoga Mat",
+    "price": 29.99,
+    "category": "fitness",
+    "image_url": "/images/yoga.jpg"
+  },
+  {
+    "name": "Fitness Tracker",
+    "price": 129.99,
+    "category": "fitness",
+    "image_url": "/images/tracker.jpg"
+  },
+  {
+    "name": "Running Shoes",
+    "price": 89.99,
+    "category": "running",
+    "image_url": "/images/running_shoes.jpg"
+  },
+  {
+    "name": "Running Shorts",
+    "price": 34.99,
+    "category": "running",
+    "image_url": "/images/shorts.jpg"
+  },
+  {
+    "name": "Boxing Gloves",
+    "price": 59.99,
+    "category": "boxing",
+    "image_url": "/images/boxing.jpg"
+  },
+  {
+    "name": "Jump Rope",
+    "price": 14.99,
+    "category": "boxing",
+    "image_url": "/images/jumprope.jpg"
+  },
+  {
+    "name": "Basketball Jersey",
+    "price": 45.99,
+    "category": "basketball",
+    "image_url": "/images/basketball.jpg"
+  },
+  {
+    "name": "Basketball",
+    "price": 29.99,
+    "category": "basketball",
+    "image_url": "/images/ball.jpg"
+  }
+]
