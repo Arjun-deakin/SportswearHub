@@ -53,10 +53,10 @@ This project started as a personal dream: to create a platform like Amazon, but 
 
 | Screenshot                                                        | Description                                               |
 | ----------------------------------------------------------------- | --------------------------------------------------------- |
-| ![Homepage](./public/images/screenshot-home.png)                  | Parallax homepage with greeting and featured categories.  |
-| ![Categories](./public/images/screenshot-products.png)            | Dynamically rendered product cards with Shop Now buttons. |
-| ![Product Details](./public/images/screenshot-product-detail.png) | Single product page with Add to Cart button.              |
-| ![Cart Page](./public/images/screenshot-cart.png)                 | LocalStorage-based shopping cart view.                    |
+| ![Homepage](./public/images/placeholders.png)                     | Parallax homepage with greeting and featured categories.  |
+| ![Categories](./public/images/placeholders.png)                   | Dynamically rendered product cards with Shop Now buttons. |
+| ![Product Details](./public/images/placeholders.png)              | Single product page with Add to Cart button.              |
+| ![Cart Page](./public/images/placeholders.png)                    | LocalStorage-based shopping cart view.                    |
 
 ## ⚙️ Setup Instructions
 
