@@ -49,14 +49,14 @@ This project started as a personal dream: to create a platform like Amazon, but 
 * **Database**: MySQL (via `mysql2/promise`)
 * **Security**: `bcryptjs`, validation scripts, minimal exposure
 
-## 🧪 Screenshots
+## 🧪 Screenshots(Its has placeholders )
 
 | Screenshot                                                       | Description                                              |
 | -----------------------------------------------------------------| --------------------------------------------------------- |
-| ![Homepage](./public/images/placeholder.png)                     | Parallax homepage with greeting and featured categories.  |
-| ![Categories](./public/images/placeholder.png)                   | Dynamically rendered product cards with Shop Now buttons. |
-| ![Product Details](./public/images/placeholder.png)              | Single product page with Add to Cart button.              |
-| ![Cart Page](./public/images/placeholder.png)                    | LocalStorage-based shopping cart view.                    |
+| ![Homepage]                                                      | Parallax homepage with greeting and featured categories.  |
+| ![Categories]                                                    | Dynamically rendered product cards with Shop Now buttons. |
+| ![Product Details]                                               | Single product page with Add to Cart button.              |
+| ![Cart Page]                                                     | LocalStorage-based shopping cart view.                    |
 
 ## ⚙️ Setup Instructions
 
